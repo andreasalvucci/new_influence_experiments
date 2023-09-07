@@ -1,0 +1,1016 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/friendshipneverends/ontology/"
+     xml:base="http://w3id.org/friendshipneverends/ontology/"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://w3id.org/friendshipneverends/ontology/">
+        <rdfs:label>Friendship Never Ends Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_AcquaintanceRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_AcquaintanceRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_AdmirationRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_AdmirationRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_BandmateRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_BandmateRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_CopupilsRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_CopupilsRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_FellowRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_FellowRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_FriendRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_FriendRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_MentoringRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_MentoringRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_ParenthoodRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_ParenthoodRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_RivalryRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_RivalryRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/R_SiblinghoodRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/R_SiblinghoodRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/admires -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/admires">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasAdmirator"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_AdmirationRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals where the subject is an admirator of the target individual.</rdfs:comment>
+        <rdfs:label>admires</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasAcquaintance -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasAcquaintance">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasAcquaintance"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_AcquaintanceRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals acquainted between each others.</rdfs:comment>
+        <rdfs:label>has acquaintance</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasAdmirator -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasAdmirator">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_AdmirationRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals where the subject is an admirator of the target individual.</rdfs:comment>
+        <rdfs:label>has admirator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasBandmate -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasBandmate">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasBandmate"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_BandmateRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_BandmateRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals that played in the same band.</rdfs:comment>
+        <rdfs:label>has band mate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasChild -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasChild">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasParent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyDisjointWith rdf:resource="http://w3id.org/friendshipneverends/ontology/hasParent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_ParenthoodRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals where the subject is a child of the target.</rdfs:comment>
+        <rdfs:label>has child</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasCopupil -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasCopupil">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasCopupil"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasMentor"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasPupil"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_CopupilsRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals where both individuals studied with the same mentor.</rdfs:comment>
+        <rdfs:label>has copupil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasFellow -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasFellow">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasFellow"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_FellowRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_FellowRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals that are in some fellowship relation.</rdfs:comment>
+        <rdfs:label>has fellow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasFriend -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasFriend">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/isFriendOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_FriendRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between a subject individual being friend of the target individual.</rdfs:comment>
+        <rdfs:label>has friend</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasMentor -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasMentor">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPupil"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_MentoringRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals identifying a mentor of the subject.</rdfs:comment>
+        <rdfs:label>has mentor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasParent -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasParent">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_ParenthoodRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals where the subject is a parent of the target.</rdfs:comment>
+        <rdfs:label>has parent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasPupil -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasPupil">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_MentoringRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between two individuals identifying a pupil of the subject.</rdfs:comment>
+        <rdfs:label>has pupil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasRival -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasRival">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/isRivalOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_RivalryRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between a subject individual being rival of the target individual.</rdfs:comment>
+        <rdfs:label>has rival</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/isSourceOf"/>
+        <rdfs:domain rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:comment>Source agent in a personal relationship.</rdfs:comment>
+        <rdfs:label>has source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/hasTarget -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/hasTarget">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+        <rdfs:domain rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:comment>Target agent in a personal relationship.</rdfs:comment>
+        <rdfs:label>has target</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/isFriendOf -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/isFriendOf">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/friendshipneverends/ontology/hasPersonalRelationshipWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_FriendRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between a subject individual being the friend of the target individual.</rdfs:comment>
+        <rdfs:label>is friend of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/isRivalOf -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/isRivalOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/R_RivalryRelationship"/>
+            <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/hasSource"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Relationship between a subject individual being the rival of the target individual.</rdfs:comment>
+        <rdfs:label>is rival of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/isSourceOf -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/isSourceOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstituentOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+        <rdfs:comment>Identifies the personal relationship in which the agent is a source.</rdfs:comment>
+        <rdfs:label>is source of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/isTargetOf -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/friendshipneverends/ontology/isTargetOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstituentOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+        <rdfs:comment>Identifies the personal relationship in which the agent is a target.</rdfs:comment>
+        <rdfs:label>is target of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstituentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstituentOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/AcquaintanceRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/AcquaintanceRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Acquaintanceship"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_AcquaintanceRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Acquaintanceship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Acquaintanceship">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/RelationshipType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Admiration -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Admiration">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/RelationshipType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/AdmirationRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/AdmirationRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Admiration"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_AdmirationRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Bandmate -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Bandmate">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/Fellowship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/BandmateRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/BandmateRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Bandmate"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_BandmateRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/FellowRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Copupils -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Copupils">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/Fellowship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/CopupilsRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/CopupilsRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Copupils"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_CopupilsRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/FellowRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/FellowRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/FellowRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Fellowship"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_FellowRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Fellowship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Fellowship">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/RelationshipType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/FriendRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/FriendRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Friendship"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_FriendRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Friendship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Friendship">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/RelationshipType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/MentoringRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/MentoringRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Mentorship"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_MentoringRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Mentorship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Mentorship">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/RelationshipType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Parenthood -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Parenthood">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/RelationshipType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/ParenthoodRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/ParenthoodRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Parenthood"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_ParenthoodRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/PersonalRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/PersonalRelationship">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialRelation"/>
+        <rdfs:comment>A personal relationship is a social relation that is classified by a relation type and involves two agents.</rdfs:comment>
+        <rdfs:label>Personal relationship</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/RelationshipType -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/RelationshipType">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+        <rdfs:comment>The type that characterises a relationship.</rdfs:comment>
+        <rdfs:label>Relationship type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/RivalryRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/RivalryRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Rivalship"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_RivalryRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Rivalship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Rivalship">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/RelationshipType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Siblinghood -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/Siblinghood">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/RelationshipType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/SiblinghoodRelationship -->
+
+    <owl:Class rdf:about="http://w3id.org/friendshipneverends/ontology/SiblinghoodRelationship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+                <owl:hasValue rdf:resource="http://w3id.org/friendshipneverends/ontology/Siblinghood"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/friendshipneverends/ontology/R_SiblinghoodRelationship"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/friendshipneverends/ontology/PersonalRelationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialRelation -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialRelation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/AcquaintanceRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/AcquaintanceRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Acquaintanceship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Acquaintanceship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Admiration -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Admiration"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/AdmirationRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/AdmirationRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Bandmate -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Bandmate"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/BandmateRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/BandmateRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Copupils -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Copupils"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/CopupilsRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/CopupilsRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/FellowRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/FellowRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Fellowship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Fellowship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/FriendRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/FriendRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Friendship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Friendship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/MentoringRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/MentoringRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Mentorship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Mentorship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Parenthood -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Parenthood"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/ParenthoodRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/ParenthoodRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/RivalryRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/RivalryRelationship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Rivalship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Rivalship"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/Siblinghood -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/Siblinghood"/>
+    
+
+
+    <!-- http://w3id.org/friendshipneverends/ontology/SiblinghoodRelationship -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/friendshipneverends/ontology/SiblinghoodRelationship"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/AcquaintanceRelationship">
+        <rdfs:comment>Relationship with an acquaintance, contact, fellow
+member of movements or societies who are known personally but who could not be considered rivals, collaborators, friends, copupils, or siblings.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Acquaintance relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Acquaintanceship">
+        <rdfs:comment>The state of being acquainted with a person.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/acquaintanceship_n?tab=factsheet#24235395"/>
+        <rdfs:label>Acquaintanceship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Admiration">
+        <rdfs:comment>Regard for someone or something considered praiseworthy or excellent; esteem, approbation; appreciation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/admiration_n?tab=factsheet#11158476"/>
+        <rdfs:label>Admiration</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/AdmirationRelationship">
+        <rdfs:comment>Describe the relationship between those whom the person admired, imitated, emulated, copied, idolized, or was otherwise influenced or
+inspired by (excluding parents and masters).</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Admiration relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Bandmate">
+        <rdfs:comment>A fellow musician or singer in a band.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/bandmate_n?tab=factsheet#9928295506"/>
+        <rdfs:label>Bandmate</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/BandmateRelationship">
+        <rdfs:comment>Describe the relationship between individuals that shared the same band.</rdfs:comment>
+        <rdfs:label>Bandmate relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Copupils">
+        <rdfs:comment>Students who studied under the same master.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Copupils</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/CopupilsRelationship">
+        <rdfs:comment>Relationship with an individual who studied under the same master.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Copupil relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/FellowRelationship">
+        <rdfs:comment>Relationship with whom the individual had collaborated or formed a partnership in some enterprise.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Fellowship relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Fellowship">
+        <rdfs:comment>The state of being acquainted with a person. Also: an instance of this; a relationship of this type.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/fellowship_n?tab=factsheet#4598287"/>
+        <rdfs:label>Fellowship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/FriendRelationship">
+        <rdfs:comment>Relationship with whom the indivisual has an intimate relationship.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Friendship relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Friendship">
+        <rdfs:comment>The state or relation of being a friend; association of persons as friends.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/friendship_n?tab=factsheet#3725886"/>
+        <rdfs:label>Friendship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/MentoringRelationship">
+        <rdfs:comment>Relationship between individuals in a master-apprentice or mentor-pupil relationship in a workshop, studio, or atelier.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Mentoring relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Mentorship">
+        <rdfs:comment>The function or position of mentor; advice and guidance provided by a mentor.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/mentorship_n?tab=factsheet#11672618"/>
+        <rdfs:label>Mentorship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Parenthood">
+        <rdfs:comment>The state or condition of being a parent; fatherhood or motherhood.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/parenthood_n?tab=factsheet#31955246"/>
+        <rdfs:label>Parenthood</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/ParenthoodRelationship">
+        <rdfs:comment>Relationship with an individual parents.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Parenthood relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/RivalryRelationship">
+        <rdfs:comment>Relationship between an individual and an explicit competitor for the attentions of patrons and public.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Rivalry relationship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Rivalship">
+        <rdfs:comment>Rivalry, competition.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/rivalship_n?tab=factsheet#25081045"/>
+        <rdfs:label>Rilavship</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/Siblinghood">
+        <rdfs:comment>The state, condition, or fact of being a sibling; sisterhood or brotherhood.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://www.oed.com/dictionary/siblinghood_n?tab=factsheet#1325166810"/>
+        <rdfs:label>Siblinghood</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://w3id.org/friendshipneverends/ontology/SiblinghoodRelationship">
+        <rdfs:comment>Relationship with a brother or sister.</rdfs:comment>
+        <rdfs:isDefinedBy>Simonton, D. K. (1984). Artistic creativity and interpersonal relationships across and within generations. Journal of personality and social psychology, 46(6), 1273.</rdfs:isDefinedBy>
+        <rdfs:label>Sibling relationship</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
