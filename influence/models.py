@@ -39,7 +39,8 @@ class BaseInfluencePredictor(nn.Module):
     raise NotImplementedError()
 
   def evaluate(self, adj, target, mask_idx, k: int = None):
-    loss, m = self.forward(adj, target, mask_idx)
+    with torch.no_grad():
+      loss, m = self.forward(adj, target, mask_idx)
 
     pred = m[mask_idx].reshape(-1)
     y = target[mask_idx].reshape(-1)
@@ -73,7 +74,7 @@ class UniformInfluencePredictor(BaseInfluencePredictor):
     pred = w_input[mask_idx]
     y = target[mask_idx]
     
-    loss = approxNDCGLoss(pred, y)
+    loss = F.cross_entropy(pred, F.softmax(y, -1))
     return loss, w_input
 
 
@@ -98,7 +99,7 @@ class FrequencyInfluencePredictor(BaseInfluencePredictor):
     pred = w_input[mask_idx]
     y = target[mask_idx]
     
-    loss = approxNDCGLoss(pred, y)
+    loss = F.cross_entropy(pred, F.softmax(y, -1))
     return loss, w_input
 
 
@@ -123,7 +124,7 @@ class InverseFrequencyInfluencePredictor(BaseInfluencePredictor):
     pred = w_input[mask_idx]
     y = target[mask_idx]
     
-    loss = approxNDCGLoss(pred, y)
+    loss = F.cross_entropy(pred, F.softmax(y, -1))
     return loss, w_input
 
 
@@ -162,7 +163,7 @@ class FitInfluencePredictor(BaseInfluencePredictor):
     pred = w_input[mask_idx]
     y = target[mask_idx]
     
-    loss = approxNDCGLoss(pred, y)
+    loss = F.cross_entropy(pred, F.softmax(y, -1))
     
     return loss, w_input
 
@@ -171,9 +172,9 @@ class DNNInfluencePredictor(FitInfluencePredictor):
   def __init__(self, num_relations: int, nodes: int, comunicability_degree: float = 8, device: str = "cuda:0"):
     super().__init__(num_relations, nodes, comunicability_degree=comunicability_degree, device=device)
     self.dnn = nn.Sequential(
-      nn.Linear(num_relations, num_relations),
+      nn.Linear(num_relations, 256),
       nn.ReLU(),
-      nn.Linear(num_relations, 1)
+      nn.Linear(256, 1)
     )
     self.double()
 
@@ -197,7 +198,7 @@ class DNNInfluencePredictor(FitInfluencePredictor):
     pred = w_input[mask_idx]
     y = target[mask_idx]
     
-    loss = approxNDCGLoss(F.sigmoid(pred), F.sigmoid(y))
+    loss = F.cross_entropy(pred, F.softmax(y, -1))
     
     return loss, w_input
 
