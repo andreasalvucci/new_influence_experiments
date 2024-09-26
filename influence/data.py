@@ -41,6 +41,10 @@ class Graph:
     target_g = nx.DiGraph()
     target_g.add_nodes_from(nodes)
     target_g.add_edges_from(self.rdf.subject_objects(target_pred))
+
+    # remove nodes
+    target_g.remove_nodes_from(set(target_g).difference(nodes))
+
     target = torch.tensor(nx.to_numpy_array(target_g))
 
     # compute a mask for the nodes that have a target pred set
