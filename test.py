@@ -34,7 +34,7 @@ parser.add_argument("--test", type=float, default=0.2, help="Test size fraction.
 
 if __name__ == "__main__":
   args = argparse.Namespace(
-    model="dnn",
+    model="fit",
     input=Path("resources/all_relations.ttl"),
     output=Path("experiments/test/output.json"),
     target_pred="http://w3id.org/friendshipneverends/ontology/hasAdmirator",

@@ -4,7 +4,7 @@ for i in {1..5}
 do
   for exp in {1..5}
   do
-    for model in fit dnn # uniform frequency inverse-frequency
+    for model in fit #dnn  uniform frequency inverse-frequency
     do
       python train.py \
         -m $model \
