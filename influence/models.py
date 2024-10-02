@@ -168,37 +168,80 @@ class FitInfluencePredictor(BaseInfluencePredictor):
     return loss, w_input
 
 
-class DNNInfluencePredictor(FitInfluencePredictor):
-  def __init__(self, num_relations: int, nodes: int, comunicability_degree: float = 8, device: str = "cuda:0"):
-    super().__init__(num_relations, nodes, comunicability_degree=comunicability_degree, device=device)
-    self.dnn = nn.Sequential(
-      nn.Linear(num_relations, 256),
-      nn.ReLU(),
-      nn.Linear(256, 1)
-    )
-    self.double()
+# class DNNInfluencePredictor(FitInfluencePredictor):
+#   def __init__(self, num_relations: int, nodes: int, comunicability_degree: float = 8, device: str = "cuda:0"):
+#     super().__init__(num_relations, nodes, comunicability_degree=comunicability_degree, device=device)
+#     self.dnn = nn.Sequential(
+#       nn.Linear(num_relations, 256),
+#       nn.ReLU(),
+#       nn.Linear(256, 1)
+#     )
+#     self.double()
 
-  def forward(self, adj, target, mask_idx):
-    # prepare a weight for each relation
-    relations_idxs = torch.arange(self.num_relations).to(self.device)
+#   def forward(self, adj, target, mask_idx):
+#     # prepare a weight for each relation
+#     relations_idxs = torch.arange(self.num_relations).to(self.device)
     
-    # compute weight of each relation
-    relation_weight = self.relation_embedding(relations_idxs)
-    relation_weight = relation_weight + relation_weight.min()
+#     # compute weight of each relation
+#     relation_weight = self.relation_embedding(relations_idxs)
+#     relation_weight = relation_weight + relation_weight.min()
     
-    # weight input by casting the weights to |R| x 1 x 1
-    w_input = adj * relation_weight.reshape(-1, 1, 1)
-    w_input = torch.permute(w_input, (1, 2, 0))
+#     # weight input by casting the weights to |R| x 1 x 1
+#     w_input = adj * relation_weight.reshape(-1, 1, 1)
+#     w_input = torch.permute(w_input, (1, 2, 0))
     
-    w_input = self.dnn(w_input).squeeze(2)
+#     w_input = self.dnn(w_input).squeeze(2)
     
-    #compute comunicability up to X degree
-    w_input = self.compute_communication_matrix(w_input, self.c_degree)
+#     #compute comunicability up to X degree
+#     w_input = self.compute_communication_matrix(w_input, self.c_degree)
     
-    pred = w_input[mask_idx]
-    y = target[mask_idx]
+#     pred = w_input[mask_idx]
+#     y = target[mask_idx]
     
-    loss = F.cross_entropy(pred, F.softmax(y, -1))
+#     loss = F.cross_entropy(pred, F.softmax(y, -1))
     
-    return loss, w_input
+#     return loss, w_input
+  
+
+class DNNInfluencePredictor(FitInfluencePredictor):
+    def __init__(self, num_relations: int, nodes: int, comunicability_degree: float = 8, device: str = "cuda:0"):
+        super().__init__(num_relations, nodes, comunicability_degree=comunicability_degree, device=device)
+        self.dnn = nn.Sequential(
+            nn.Linear(num_relations, 256),
+            nn.ReLU(),
+            nn.Linear(256, 1)
+        )
+        self.double()
+
+    def forward(self, adj, target, mask_idx):
+        # Converti `adj` in matrice sparsa
+        print(adj.shape)
+        sparse_adj = torch.sparse_coo_tensor(indices, values, adj.size()).to(self.device)
+        indices = sparse_adj._indices()  # Ottieni gli indici delle celle non nulle
+        values = sparse_adj._values()  # Ottieni i valori delle celle non nulle
+        
+
+        # Prepara un peso per ciascuna relazione
+        relations_idxs = torch.arange(self.num_relations).to(self.device)
+
+        # Calcola il peso di ciascuna relazione
+        relation_weight = self.relation_embedding(relations_idxs)
+        relation_weight = relation_weight + relation_weight.min()
+
+        # Pesa l'input
+        w_input = sparse_adj * relation_weight.reshape(-1, 1, 1)
+        w_input = torch.permute(w_input.to_dense(), (1, 2, 0))  # Converti il tensore sparso in denso per la DNN
+
+        # Passa attraverso la rete DNN
+        w_input = self.dnn(w_input).squeeze(2)
+
+        # Calcola la comunicabilità fino a X grado
+        w_input = self.compute_communication_matrix(w_input, self.c_degree)
+
+        pred = w_input[mask_idx]
+        y = target[mask_idx]
+        
+        loss = F.cross_entropy(pred, F.softmax(y, -1))
+        
+        return loss, w_input
 
